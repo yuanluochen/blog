@@ -1,0 +1,5 @@
+---
+title: catagory
+layout: category
+---
+

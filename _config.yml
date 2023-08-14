@@ -105,6 +105,6 @@ theme: hexo-theme-Chic
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/yuanluochen/yuanluochen.github.io.git
+  repo: git@github.com:yuanluochen/blog-hexo.git
   branch: master
 

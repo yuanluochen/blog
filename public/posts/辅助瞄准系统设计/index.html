@@ -13,7 +13,7 @@
 
 
 
-<title>Hello World | 原落尘&#39;s blog</title>
+<title>辅助瞄准系统设计 | 原落尘&#39;s blog</title>
 
 
 
@@ -40,6 +40,45 @@
 
     
     
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
         
     
 
@@ -200,7 +239,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">辅助瞄准系统设计</h1>
             
                 <div class="post-meta">
                     
@@ -209,7 +248,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">八月 14, 2023&nbsp;&nbsp;12:33:05</a>
+                        Date: <a href="#">十月 20, 2023&nbsp;&nbsp;14:47:37</a>
                         </span>
                     
                     
@@ -218,20 +257,36 @@
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <blockquote>
+<p>本文作者为原落尘，邮箱为<a href="mailto:yuanluochen@foxmail.com" class="email">yuanluochen@foxmail.com</a>，笔者能力有限，如有问题，请您指出.</p>
+</blockquote>
+<h2 id="一前言">一、前言</h2>
+<h3 id="什么是辅助瞄准系统">1.1 什么是辅助瞄准系统</h3>
+<p>首先，请思考一个问题，什么是辅助瞄准系统？</p>
+<h2 id="二辅助瞄准系统算法设计">二、辅助瞄准系统算法设计</h2>
+<h3 id="从一个案例说起">2.1 从一个案例说起</h3>
+<figure>
+<img src="/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index/2023-10-20-14-43-07.png" alt><figcaption>图2.1.1</figcaption>
+</figure>
+<p>思考一下，如果让你设计一个辅助瞄准系统，你该如何设计？辅助瞄准系统说到底就是一个简单的<strong>随动控制系统</strong>(servo control system)，即如下图2.1.1.1所示。<img src="/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index/2023-10-20-16-01-43.png" alt="图2.1.1.1">获取随动跟随目标的随动目标数值，将随动数值作为控制系统的设定值作用于控制系统，控制系统控制被控对象到达目标数值。</p>
+<h4 id="一个追击的例子">2.1.1 一个追击的例子</h4>
+<figure>
+<img src="/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index/2023-10-20-16-04-26.png" alt><figcaption>图2.1.1.2</figcaption>
+</figure>
+<p>就像追击一样，一个人追着另外一个人跑，追击者(或者被控对象)通过眼睛(或者传感器)这种视觉传感器获取被追击者(随动控制目标)的空间相对位置(即以追击者为原点的相对空间坐标)，将该位置作为追击者的控制目标，作用于控制器，控制器(或者说大脑)根据控制目标值输出控制数值作用于追击者，使追着者追击被追击者。</p>
+<h4 id="追击例子的分析">2.1.2 追击例子的分析</h4>
+<p>回顾上面的例子，我们开始总结一个针对追击例子的系统框图，并分析如何实现一个随动控制系统。</p>
+<figure>
+<img src="/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index/2023-10-20-23-52-14.png" alt><figcaption>图2.1.2.1</figcaption>
+</figure>
+<p>如上图追击控制系统的系统框图如图2.1.2.1所示，整个控制系统需要，追击者眼睛作为<strong>传感器</strong>获取<strong>目标空间位置</strong>，然后我们要将通过传感器获取的<strong>目标空间位置</strong>作为系统<strong>设定值</strong>作用于<strong>控制器</strong>，控制器分析设定值，计算出控制量作用于被控对象，控制被控对象的运动，使追击者到达追击目标。</p>
+<p>这就是我们对追击这个案例的一个分析，根据我们对该案例的分析我们可以总结出如果想实现追击目标我们需要一个能检测出追击目标空间位置的<strong>传感器</strong>;一个能分析目标空间位置，并根据空间位置合理计算控制量的一个<strong>控制器</strong>。<strong>传感器获取目标位置，控制器分析目标位置，控制被控对象到达目标位置</strong></p>
+<h3 id="设计最简单的辅助瞄准系统">2.2 设计最简单的辅助瞄准系统</h3>
+<p>根据上面追击的案例，我们开始思考如何设计一个最简单的辅助瞄准系统，辅助瞄准系统的核心工作目标为<strong>云台跟随敌方装甲板运动</strong>，就是说，敌方装甲板空间位置在哪里，云台的空间向量就指向哪里。</p>
+<p>辅助瞄准的功能该如何实现呢？根据上面追击的例子，实现辅助瞄准，我们最起码需要一个传感器<strong>识别装甲板</strong>，并<strong>获取其空间位置</strong>，也需要一个控制器<strong>分析装甲板的空间位置</strong>，<strong>控制云台</strong>的空间绝对位姿到达装甲板的空间坐标。这一点我们明确了，那么现在问题来了，传感器和控制器该咋搞?在设计一个辅助瞄准系统中我们的传感器要具备识别装甲板的能力，并且具备能获取目标空间位置的能力，控制器要具备能分析空间位置数据，并将数据作用与控制对象的能力。这该咋搞呢?现在我开始分开的讲解一下关于传感器以及控制器的内容</p>
+<h4 id="辅助瞄准系统的传感器初识">2.2.1 辅助瞄准系统的传感器初识</h4>
+<h3 id="辅助瞄准系统的算法框图">2.3 辅助瞄准系统的算法框图</h3>
+<p><img src="/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index/2023-10-20-14-34-39.png" alt="图2.3.1">如上图2.3.1所示，该图为辅助瞄准系统的算法框图，</p>
 
         </div>
 
@@ -246,7 +301,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://yuanluochen.github.io/posts/hello-world/index.html">https://yuanluochen.github.io/posts/hello-world/index.html</a></span>
+                        <span><a href="https://yuanluochen.github.io/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">https://yuanluochen.github.io/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html</a></span>
                     </p>
                 
                 
@@ -279,10 +334,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/posts/%E8%BE%85%E5%8A%A9%E7%9E%84%E5%87%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/index.html">辅助瞄准系统设计</a>
             
-            
-            <a class="next" rel="next" href="/posts/%E5%BC%80%E5%8F%91%E8%80%85%E5%B0%8F%E7%99%BD%E7%9A%84git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/index.html">开发者小白的git入门指南</a>
+            <a class="next" rel="next" href="/posts/hello-world/index.html">Hello World</a>
             
         </section>
 

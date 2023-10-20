@@ -1,0 +1,88 @@
+<mxfile host="Electron" modified="2023-10-20T09:11:58.296Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.3.7 Chrome/112.0.5615.204 Electron/24.5.0 Safari/537.36" etag="Iz-kxkipEAb5nYzpLRMX" version="21.3.7" type="device">
+  <diagram name="Page-1" id="fD6BcU1PXyFt2JFFuI02">
+    <mxGraphModel dx="2284" dy="851" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-44" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="860" width="700" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-28" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="60" width="840" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-2" target="X5jq-bh9dkmt-k5RSqyG-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-2" value="通过PNP解算获取云台坐标系下的目标相对三维坐标" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-4" target="X5jq-bh9dkmt-k5RSqyG-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-4" value="将云台坐标系下的相对三维坐标转化为惯性系下的三维绝对坐标" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-6" target="X5jq-bh9dkmt-k5RSqyG-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-6" value="EKF进行状态估计，进行优化数据" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-12" target="X5jq-bh9dkmt-k5RSqyG-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-12" value="子弹弹速" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-14" target="X5jq-bh9dkmt-k5RSqyG-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-14" value="将状态估计的结果以及子弹弹速导入弹道模型计算子弹到达目标的飞行时间" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-17" target="X5jq-bh9dkmt-k5RSqyG-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-17" value="依据子弹飞行时间以及目标运动学模型预测子弹到达目标时目标的未来位置" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-19" target="X5jq-bh9dkmt-k5RSqyG-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-19" value="根据目标未来的三维坐标计算yaw轴pitch轴的绝对角度" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-21" value="将绝对角度发送给云台控制任务，控制云台转动" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-25" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;辅助瞄准系统算法框图&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="310" y="80" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-26" target="X5jq-bh9dkmt-k5RSqyG-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-26" value="云台绝对位姿即欧拉角数据" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-38" target="X5jq-bh9dkmt-k5RSqyG-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-38" value="获取目标的随动目标数值" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="X5jq-bh9dkmt-k5RSqyG-39" target="X5jq-bh9dkmt-k5RSqyG-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-39" value="控制系统" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-41" value="设定值" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="940" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X5jq-bh9dkmt-k5RSqyG-42" value="控制被控对象到达目标数值" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="940" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
